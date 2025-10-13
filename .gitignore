@@ -52,3 +52,6 @@ _build/
 
 # macOS
 .DS_Store
+
+# Legacy artifacts
+Legacy/
