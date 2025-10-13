@@ -1,0 +1,181 @@
+%-------------------------
+% Resume in Latex
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape \href{https://www.abdulkhurram.com}{Abdul Rafay Khurram}} \\ \vspace{1pt}
+    \small +1 (236) 865-4820 $|$ \href{mailto:rafay@abdulkhurram.com}{\underline{rafay@abdulkhurram.com}} $|$ 
+    \href{https://linkedin.com/in/abdulkhurram}{\underline{linkedin.com/in/abdulkhurram}} $|$
+    \href{https://github.com/arkb75}{\underline{github.com/arkb75}}
+\end{center}
+
+%-----------EDUCATION AND AWARDS-----------
+\section{Education \& Awards}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {The University of British Columbia}{Vancouver, BC, Canada}
+      {Bachelor of Science in Computer Science (Expected Graduation: May 2027)}{}
+      \resumeSubheading
+      {Euclid Mathematics Contest, University of Waterloo}{2021}
+      {Top 5\% Internationally, Certificate of Distinction}{}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+\resumeSubheading
+  {Software Engineer Intern {\mdseries $|$ \emph{TypeScript/Node.js, AWS, Playwright, OpenAI}}}{Jan. 2025 -- Present}
+  {Otto Optical Systems (Contello.ai)}{Toronto, ON, Canada}
+  \resumeItemListStart
+    \resumeItem{Built cloud-native, event-driven pipelines on \textbf{AWS (SQS/S3)} and multi-brand dashboards with TypeScript/\textbf{Next.js} + \textbf{Node}; owned design→deploy→monitoring (\textbf{CloudWatch}); scaled to \textbf{thousands/day}.}
+    \resumeItem{Accelerated content prep by ingesting brand docs with an \textbf{NLP} step and auto-injecting channel-specific context.}
+    \resumeItem{Expanded coverage across major platforms with multimedia posting and a \textbf{distributed async video pipeline}; added \textbf{engagement analytics} and Canva export.}
+    \resumeItem{Raised scheduler reliability to \textbf{99.9\%} by moving generation to \textbf{OpenAI Responses API}, integrating \textbf{Playwright E2E} gates, hardening auth/session, adding \textbf{retry/backoff} and scheduler-driven notifications.}
+  \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Developer \& Team Lead {\mdseries $|$ \emph{Unreal Engine, C++, Python}}}{Sept. -- Dec. 2024}
+      {UBC Emerging Media Lab}{Vancouver, BC, Canada}
+      \resumeItemListStart
+        \resumeItem{Led an \textbf{AI-powered} VR platform in \textbf{Unreal Engine (C++)} with interactive UI \textbf{state machines} for clinical scenarios.}
+        \resumeItem{Increased stability with a \textbf{multithreaded supervisory layer} that monitors the AI patient and auto-corrects off-protocol replies, using common design patterns.}
+      \resumeItem{Delivered a functional prototype in two weeks, securing project funding.}
+      \resumeItem{Cut backend costs by \textbf{90\%} via system optimizations, improving real-time performance by \textbf{40\%}.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Software Engineer Intern {\mdseries $|$ \emph{Vue.js, Java, Jenkins, Docker}}}{May -- Aug. 2023}
+      {Faaz Consulting}{Maryland, USA}
+      \resumeItemListStart
+        \resumeItem{Improved UI responsiveness by \textbf{30\%} and redesigned key workflows in Vue.js, delivering a smoother user experience}
+        \resumeItem{Automated deployment processes with Jenkins and Docker, reducing deployment times by 20\%.}
+        \resumeItem{Enhanced legacy systems and delivered software updates under strict deadlines.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{SoloPilot — Client Ops Studio} $|$ \emph{Python, TypeScript/Next.js, AWS, LangChain}}
+    {Jun 2025 -- Present}
+  \resumeItemListStart
+       \resumeItem{Building a human in the loop platform for solo freelancers that unifies client intake, planning, proposals, coding, QA, and delivery in one workspace.}
+        \resumeItem{Shipped an email intake console and conversational manager that triages threads, captures scope, and renders versioned proposal PDFs with inline annotations and a revision loop.}
+        \resumeItem{Built an evaluator→revisor \textbf{agent} loop with rubric-based \textbf{benchmarking} (score + revision), improving copy quality via measured iterations.}
+        \resumeItem{Unified AI and governance: Provider-agnostic \textbf{LLM agent} layer with centralized logging; repo-aware coding/deploy agent; CI quality gates; AWS-backed ops (\textbf{Bedrock}, SQS, versioned S3, CloudWatch).}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{InsightUBC - Dataset Manager} $|$ \emph{React.js, Node.js, REST API}}
+    {Sept. -- Dec. 2024}
+  \resumeItemListStart
+          \resumeItem{Developed React-based dashboards and integrated APIs with Chart.js to visualize live course enrollment data.}
+          \resumeItem{Built interactive visualizations with Chart.js, delivering dynamic insights from complex data.}
+          \resumeItem{Implemented \textbf{Mocha} and \textbf{Chai} for backend testing, ensuring robust and error-free performance.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Real Estate Management Platform} $|$ \emph{Express.js, OracleDB (SQL)}}
+    {July -- August 2023}
+  \resumeItemListStart
+      \resumeItem{Built a real estate platform integrating inspectors and contractors.}
+      \resumeItem{Designed an OracleDB schema with ISA relationships for efficient queries.}
+      \resumeItem{Built Express.js APIs with async handling and transactional SQL operations for concurrent listings.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: TypeScript/JavaScript, Java, Python, SQL, C/C++, Swift, HTML/CSS, React Native} \\
+     \textbf{Platforms \& Tools}{: Next.js, Node.js/Express, Playwright; AWS (Amplify, Lambda, DynamoDB, S3, SQS, CloudWatch); OpenAI API; Meta/LinkedIn/X/Canva APIs; Git, Docker, Yarn, Tailwind CSS, RDBMS}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
