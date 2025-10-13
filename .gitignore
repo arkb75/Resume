@@ -1,0 +1,54 @@
+# LaTeX intermediates
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.synctex.gz(busy)
+*.toc
+*.lof
+*.lot
+*.lol
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+*.ps
+*.pdfsync
+
+# BibLaTeX/Biber
+*.bcf
+*.run.xml
+*.blg
+*.bbl
+
+# Index/glossary/nomenclature
+*.idx
+*.ind
+*.ilg
+*.ist
+*.acr
+*.acn
+*.alg
+*.glo
+*.glg
+*.gls*
+*.nlo
+*.nls
+
+# minted/pygments, pythontex, etc.
+_minted*/
+*.pyg
+*.pytxcode
+
+# latexmk/latex-workshop build dirs (use any that apply)
+out/
+build/
+latex.out/
+dist/
+_build/
+
+# macOS
+.DS_Store
