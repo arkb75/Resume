@@ -15,6 +15,7 @@
 - **Emphasis:** Prefer `\textbf{}` for highlighting keywords and `\textit{}` for secondary emphasis; avoid inline styling packages unless necessary.
 - **Sections:** Maintain existing ordering (Summary, Experience, Projects, Education, Skills); add new sections only when tailored to the job.
 - **Macros:** Introduce new commands with `\newcommand` at the top of `main.tex`, and reuse existing macros (e.g., `\resumeItem`) wherever possible.
+- **Length guard:** When replacing existing text, keep the new content at or below the original character count so `main.tex` stays single-page.
 
 ## Testing Guidelines
 - **Compilation check:** Run `latexmk -pdf main.tex` before every commit to ensure a warning-free build.
