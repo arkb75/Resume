@@ -1,0 +1,61 @@
+name: Sync Resume to Website
+
+on:
+  push:
+    branches:
+      - '**'  # All branches
+  delete:
+    branches:
+      - '**'  # Handle branch deletions
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Resume repo
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        if: github.event_name == 'push'
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+
+      - name: Clone website repo
+        run: |
+          git clone https://x-access-token:${{ secrets.WEBSITE_REPO_TOKEN }}@github.com/arkb75/abdulkhurramdotcom.git website
+
+      - name: Sync resume
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          SAFE_NAME=$(echo "$BRANCH_NAME" | tr '/' '-')
+          
+          if [ "${{ github.event_name }}" == "delete" ]; then
+            # Remove deleted branch's resume
+            rm -rf "website/public/$SAFE_NAME"
+          else
+            # Add/update resume
+            mkdir -p "website/public/$SAFE_NAME"
+            cp main.pdf "website/public/$SAFE_NAME/Resume.pdf"
+          fi
+
+      - name: Update manifest
+        run: |
+          cd website
+          # Generate manifest from existing directories
+          node -e "
+            const fs = require('fs');
+            const dirs = fs.readdirSync('public', { withFileTypes: true })
+              .filter(d => d.isDirectory() && fs.existsSync('public/' + d.name + '/Resume.pdf'))
+              .map(d => d.name);
+            fs.writeFileSync('public/resume-versions.json', JSON.stringify(dirs, null, 2));
+          "
+
+      - name: Commit and push
+        run: |
+          cd website
+          git config user.name "Resume Sync Bot"
+          git config user.email "bot@github.com"
+          git add .
+          git diff --staged --quiet || git commit -m "Sync resume: ${{ github.ref_name }}"
+          git push
