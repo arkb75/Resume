@@ -1,48 +1,43 @@
 name: Sync Resume to Website
-
 on:
   push:
     branches:
-      - '**'  # All branches
+      - '**'
   delete:
     branches:
-      - '**'  # Handle branch deletions
-
+      - '**'
+  workflow_dispatch:
+    inputs:
+      sync_all:
+        description: 'Sync all branches (not just current)'
+        required: false
+        default: 'true'
+        type: boolean
 jobs:
-  sync:
+  sync-current:
+    # Runs for regular push events - syncs just the pushed branch
+    if: github.event_name == 'push' || github.event_name == 'delete'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Resume repo
         uses: actions/checkout@v4
-
-      - name: Compile LaTeX
-        if: github.event_name == 'push'
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-
       - name: Clone website repo
         run: |
           git clone https://x-access-token:${{ secrets.WEBSITE_REPO_TOKEN }}@github.com/arkb75/abdulkhurramdotcom.git website
-
       - name: Sync resume
         run: |
           BRANCH_NAME="${{ github.ref_name }}"
           SAFE_NAME=$(echo "$BRANCH_NAME" | tr '/' '-')
           
           if [ "${{ github.event_name }}" == "delete" ]; then
-            # Remove deleted branch's resume
             rm -rf "website/public/$SAFE_NAME"
           else
-            # Add/update resume
             mkdir -p "website/public/$SAFE_NAME"
             cp main.pdf "website/public/$SAFE_NAME/Resume.pdf"
           fi
-
       - name: Update manifest
         run: |
           cd website
-          # Generate manifest from existing directories
           node -e "
             const fs = require('fs');
             const dirs = fs.readdirSync('public', { withFileTypes: true })
@@ -50,7 +45,6 @@ jobs:
               .map(d => d.name);
             fs.writeFileSync('public/resume-versions.json', JSON.stringify(dirs, null, 2));
           "
-
       - name: Commit and push
         run: |
           cd website
@@ -58,4 +52,51 @@ jobs:
           git config user.email "bot@github.com"
           git add .
           git diff --staged --quiet || git commit -m "Sync resume: ${{ github.ref_name }}"
+          git push
+  sync-all:
+    # Runs for manual triggers - syncs ALL branches
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone website repo
+        run: |
+          git clone https://x-access-token:${{ secrets.WEBSITE_REPO_TOKEN }}@github.com/arkb75/abdulkhurramdotcom.git website
+      - name: Fetch and sync all branches
+        run: |
+          # Get all branches from the Resume repo
+          BRANCHES=$(curl -s https://api.github.com/repos/arkb75/Resume/branches | jq -r '.[].name')
+          
+          for BRANCH in $BRANCHES; do
+            echo "Processing branch: $BRANCH"
+            SAFE_NAME=$(echo "$BRANCH" | tr '/' '-')
+            
+            # Clone the branch
+            git clone --depth 1 --branch "$BRANCH" https://github.com/arkb75/Resume.git "temp-$SAFE_NAME" || continue
+            
+            # Copy PDF if exists
+            if [ -f "temp-$SAFE_NAME/main.pdf" ]; then
+              mkdir -p "website/public/$SAFE_NAME"
+              cp "temp-$SAFE_NAME/main.pdf" "website/public/$SAFE_NAME/Resume.pdf"
+              echo "  Synced $BRANCH -> $SAFE_NAME"
+            fi
+            
+            rm -rf "temp-$SAFE_NAME"
+          done
+      - name: Update manifest
+        run: |
+          cd website
+          node -e "
+            const fs = require('fs');
+            const dirs = fs.readdirSync('public', { withFileTypes: true })
+              .filter(d => d.isDirectory() && fs.existsSync('public/' + d.name + '/Resume.pdf'))
+              .map(d => d.name);
+            fs.writeFileSync('public/resume-versions.json', JSON.stringify(dirs, null, 2));
+          "
+      - name: Commit and push
+        run: |
+          cd website
+          git config user.name "Resume Sync Bot"
+          git config user.email "bot@github.com"
+          git add .
+          git diff --staged --quiet || git commit -m "Sync all resume versions"
           git push
