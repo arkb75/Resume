@@ -1,11 +1,12 @@
 name: Sync Resume to Website
+
 on:
   push:
     branches:
-      - '**'
+      - 'resume/**'  # Only sync resume branches
   delete:
     branches:
-      - '**'
+      - 'resume/**'
   workflow_dispatch:
     inputs:
       sync_all:
@@ -13,6 +14,7 @@ on:
         required: false
         default: 'true'
         type: boolean
+
 jobs:
   sync-current:
     # Runs for regular push events - syncs just the pushed branch
@@ -21,9 +23,11 @@ jobs:
     steps:
       - name: Checkout Resume repo
         uses: actions/checkout@v4
+
       - name: Clone website repo
         run: |
           git clone https://x-access-token:${{ secrets.WEBSITE_REPO_TOKEN }}@github.com/arkb75/abdulkhurramdotcom.git website
+
       - name: Sync resume
         run: |
           BRANCH_NAME="${{ github.ref_name }}"
@@ -35,16 +39,18 @@ jobs:
             mkdir -p "website/public/$SAFE_NAME"
             cp main.pdf "website/public/$SAFE_NAME/Resume.pdf"
           fi
+
       - name: Update manifest
         run: |
           cd website
           node -e "
             const fs = require('fs');
             const dirs = fs.readdirSync('public', { withFileTypes: true })
-              .filter(d => d.isDirectory() && fs.existsSync('public/' + d.name + '/Resume.pdf'))
+              .filter(d => d.isDirectory() && d.name.startsWith('resume-') && fs.existsSync('public/' + d.name + '/Resume.pdf'))
               .map(d => d.name);
             fs.writeFileSync('public/resume-versions.json', JSON.stringify(dirs, null, 2));
           "
+
       - name: Commit and push
         run: |
           cd website
@@ -53,6 +59,7 @@ jobs:
           git add .
           git diff --staged --quiet || git commit -m "Sync resume: ${{ github.ref_name }}"
           git push
+
   sync-all:
     # Runs for manual triggers - syncs ALL branches
     if: github.event_name == 'workflow_dispatch'
@@ -61,6 +68,7 @@ jobs:
       - name: Clone website repo
         run: |
           git clone https://x-access-token:${{ secrets.WEBSITE_REPO_TOKEN }}@github.com/arkb75/abdulkhurramdotcom.git website
+
       - name: Fetch and sync all branches
         run: |
           # Get all branches from the Resume repo
@@ -82,16 +90,18 @@ jobs:
             
             rm -rf "temp-$SAFE_NAME"
           done
+
       - name: Update manifest
         run: |
           cd website
           node -e "
             const fs = require('fs');
             const dirs = fs.readdirSync('public', { withFileTypes: true })
-              .filter(d => d.isDirectory() && fs.existsSync('public/' + d.name + '/Resume.pdf'))
+              .filter(d => d.isDirectory() && d.name.startsWith('resume-') && fs.existsSync('public/' + d.name + '/Resume.pdf'))
               .map(d => d.name);
             fs.writeFileSync('public/resume-versions.json', JSON.stringify(dirs, null, 2));
           "
+
       - name: Commit and push
         run: |
           cd website
