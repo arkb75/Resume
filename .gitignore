@@ -55,3 +55,6 @@ _build/
 
 # Legacy artifacts
 Legacy/
+
+# Old PDF name (now using abdul_khurram_resume.pdf)
+main.pdf
