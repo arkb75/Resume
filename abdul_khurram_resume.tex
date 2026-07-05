@@ -60,9 +60,25 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeCompanyHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small#2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeCompanyRoleHeading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} {\mdseries $|$ \emph{#4}} & \small#3 \\
+      \textit{\small#2} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -103,18 +119,18 @@
 \section{Work Experience}
   \resumeSubHeadingListStart
 
-  \resumeSubheading
-  {Software Developer Co-op {\mdseries $|$ \emph{Python, Java/Scala, Apache Spark, Linux}}}{Jan. 2026 -- Present}
-  {RBC Royal Bank}{Vancouver, BC, Canada}
+  \resumeCompanyRoleHeading
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {Python, Java/Scala, Apache Spark, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Designed and shipped Python/Java services that process \textbf{50M+ daily transactions} against petabyte-scale data, modeling complex entity relationships across multiple financial product lines.}
     \resumeItem{Profiled Spark batch jobs, identified serialization and partition-skew bottlenecks, and re-wrote critical paths with Spark-native APIs and adaptive query tuning — cutting end-to-end \textbf{latency by 40\%}.}
     \resumeItem{Architected idempotent, exactly-once batch pipelines with deterministic retry semantics and automated failover, ensuring correctness guarantees across distributed banking workloads.}
   \resumeItemListEnd
 
-\resumeSubheading
-  {Software Engineer Intern {\mdseries $|$ \emph{Python, TypeScript/Node.js, AWS}}}{Jan. -- Dec. 2025}
-  {Contello.ai}{Toronto, ON, Canada}
+\resumeCompanyRoleHeading
+  {Contello.ai}{Software Engineer Intern}{Jan. -- Dec. 2025}
+  {Python, TypeScript/Node.js, AWS}{Toronto, ON, Canada}
   \resumeItemListStart
     \resumeItem{Designed async processing pipelines (SQS, S3) handling \textbf{thousands of jobs/day} — decoupled producers from consumers, implemented dead-letter queues, and reasoned about ordering and delivery guarantees.}
     \resumeItem{Built end-to-end test infrastructure (E2E + integration) across containerized service stacks, gating every release through CI and catching failure modes before production.}
@@ -127,9 +143,9 @@
 \section{Research Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Software Developer \& Team Lead {\mdseries $|$ \emph{C++, Python, Unreal Engine}}}{Sept. -- Dec. 2024}
-      {UBC Emerging Media Lab}{Vancouver, BC, Canada}
+    \resumeCompanyRoleHeading
+  {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
+  {C++, Python, Unreal Engine}{Vancouver, BC, Canada}
       \resumeItemListStart
         \resumeItem{Led an interdisciplinary research team (CS $\times$ Nursing) building an AI-driven VR simulation in C++ for clinical training — scoped requirements, designed the system, and managed delivery.}
         \resumeItem{Designed a multithreaded supervisory architecture coordinating concurrent AI actors with shared state, lock-free message passing, and real-time protocol enforcement.}
