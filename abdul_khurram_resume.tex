@@ -60,9 +60,25 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeCompanyHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small#2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeCompanyRoleHeading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} {\mdseries $|$ \emph{#4}} & \small#3 \\
+      \textit{\small#2} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \small#1 & \small#2 \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -103,23 +119,23 @@
 \section{Work Experience}
   \resumeSubHeadingListStart
 
-  \resumeSubheading
-  {Incoming Software Engineer Intern}{Sept. -- Dec. 2026}
-  {Shopify}{Toronto, ON, Canada}
+  \resumeCompanyHeading
+  {Shopify}{Sept. -- Dec. 2026}
+  {Incoming Software Engineer Intern}{Toronto, ON, Canada}
   \vspace{4pt}
 
-  \resumeSubheading
-  {Software Developer Co-op {\mdseries $|$ \emph{Python, Scala, \textbf{Kafka}, \textbf{Airflow}}}}{Jan. 2026 -- Present}
-  {RBC Royal Bank}{Vancouver, BC, Canada}
+  \resumeCompanyRoleHeading
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {Python, Scala, \textbf{Kafka}, \textbf{Airflow}}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Engineered \textbf{Python}/\textbf{Scala} \textbf{data pipelines} ingesting \textbf{50M+ daily events} via Kafka and Airflow, enforcing RBAC/encryption on \textbf{petabyte-scale Delta Lake}.}
     \resumeItem{Optimized \textbf{Apache Spark} batch jobs via Spark-native API migration and AQE tuning, cutting latency by \textbf{40\%}; built dashboards tracking pipeline health.}
     \resumeItem{Shipping multi-region services on \textbf{Kubernetes}-orchestrated clusters with fault tolerance, idempotent re-runs, and \textbf{Terraform}-provisioned failover.}
   \resumeItemListEnd
 
-\resumeSubheading
-  {Software Engineer Intern {\mdseries $|$ \emph{\textbf{Python}, TypeScript/Node.js, \textbf{AWS}, Docker}}}{Jan. -- Dec. 2025}
-  {Contello.ai}{Toronto, ON, Canada}
+\resumeCompanyRoleHeading
+  {Contello.ai}{Software Engineer Intern}{Jan. -- Dec. 2025}
+  {\textbf{Python}, TypeScript/Node.js, \textbf{AWS}, Docker}{Toronto, ON, Canada}
   \resumeItemListStart
     \resumeItem{Built async \textbf{Python} data pipelines on \textbf{AWS} (SQS, S3, VPC) processing \textbf{thousands of jobs/day} with dead-letter routing and back-pressure controls.}
     \resumeItem{Raised service reliability to \textbf{99.9\%} via retry/backoff, Elasticsearch-indexed logs, CloudWatch alerting, and structured observability across distributed services.}
@@ -131,9 +147,9 @@
 \section{Research Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Software Developer \& Team Lead {\mdseries $|$ \emph{\textbf{C++}, \textbf{Python}, Unreal Engine}}}{Sept. -- Dec. 2024}
-      {UBC Emerging Media Lab}{Vancouver, BC, Canada}
+    \resumeCompanyRoleHeading
+  {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
+  {\textbf{C++}, \textbf{Python}, Unreal Engine}{Vancouver, BC, Canada}
       \resumeItemListStart
         \resumeItem{Led development of a real-time VR simulation in \textbf{C++}, designing a data collection pipeline streaming sensor events for AI decision-making.}
         \resumeItem{Built a multithreaded supervisory system (\textbf{C++}/\textbf{Python}) coordinating concurrent actors with shared state and lock-free message passing.}
