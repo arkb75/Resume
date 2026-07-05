@@ -61,9 +61,25 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeCompanyHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small#2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeCompanyRoleHeading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} {\mdseries $|$ \emph{#4}} & \small#3 \\
+      \textit{\small#2} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \small#1 & \small#2 \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -104,23 +120,23 @@
 \section{Work Experience}
   \resumeSubHeadingListStart
 
-  \resumeSubheading
-  {Incoming Software Engineer Intern}{Sept. -- Dec. 2026}
-  {Shopify}{Toronto, ON, Canada}
+  \resumeCompanyHeading
+  {Shopify}{Sept. -- Dec. 2026}
+  {Incoming Software Engineer Intern}{Toronto, ON, Canada}
   \vspace{2pt}
 
-  \resumeSubheading
-  {Software Developer Co-op {\mdseries $|$ \emph{Apache Spark, Scala, Airflow, Kafka, Linux}}}{Jan. 2026 -- Present}
-  {RBC Royal Bank}{Vancouver, BC, Canada}
+  \resumeCompanyRoleHeading
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {Apache Spark, Scala, Airflow, Kafka, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Built secure Scala/Airflow pipelines processing \textbf{50M+ daily transactions} from Delta Lake, enforcing RBAC/encryption on petabyte-scale financial data.}
     \resumeItem{Optimized Spark jobs by migrating legacy code to Spark-native APIs and tuning AQE/cluster memory, solving resource bottlenecks and reducing latency by \textbf{40\%}.}
     \resumeItem{Shipping \textbf{multi-region data products} with fault tolerance, idempotent re-runs, and automated failover for critical banking workloads.}
   \resumeItemListEnd
 
-\resumeSubheading
-  {Software Engineer Intern {\mdseries $|$ \emph{TypeScript/Node.js, AWS, Playwright, OpenAI}}}{Jan. -- Dec. 2025}
-  {Contello.ai}{Toronto, ON, Canada}
+\resumeCompanyRoleHeading
+  {Contello.ai}{Software Engineer Intern}{Jan. -- Dec. 2025}
+  {TypeScript/Node.js, AWS, Playwright, OpenAI}{Toronto, ON, Canada}
   \resumeItemListStart
     \resumeItem{Owned \textbf{end-to-end product delivery}: shipped scheduling UX, multi-brand management, video publishing, and Canva export backed by AWS async pipelines at thousands/day scale.}
     \resumeItem{Improved AI content prep by ingesting brand docs, caching embeddings, and injecting channel-specific context while enforcing API guardrails.}
@@ -133,9 +149,9 @@
 \section{Research Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Software Developer \& Team Lead {\mdseries $|$ \emph{Unreal Engine, C++, Python}}}{Sept. -- Dec. 2024}
-      {UBC Emerging Media Lab}{Vancouver, BC, Canada}
+    \resumeCompanyRoleHeading
+      {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
+      {Unreal Engine, C++, Python}{Vancouver, BC, Canada}
       \resumeItemListStart
         \resumeItem{Led an \textbf{AI-driven VR clinical simulation} in Unreal/C++ with UBC Nursing; designed multithreaded C++/Python supervision for real-time AI patient protocol enforcement.}
         \resumeItem{Profiled the inference pipeline and call graph, achieving \textbf{40\%} latency reduction and \textbf{90\%} cost savings through targeted optimizations.}
