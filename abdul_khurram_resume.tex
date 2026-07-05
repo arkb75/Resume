@@ -60,9 +60,25 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeCompanyHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small#2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeCompanyRoleHeading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} {\mdseries $|$ \emph{#4}} & \small#3 \\
+      \textit{\small#2} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \small#1 & \small#2 \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -103,18 +119,18 @@
 \section{Work Experience}
   \resumeSubHeadingListStart
 
-  \resumeSubheading
-  {Software Developer Co-op {\mdseries $|$ \emph{\textbf{Python}, \textbf{Apache Spark}, \textbf{Airflow}, SQL, Linux}}}{Jan. 2026 -- Present}
-  {RBC Royal Bank}{Vancouver, BC, Canada}
+  \resumeCompanyRoleHeading
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {\textbf{Python}, \textbf{Apache Spark}, \textbf{Airflow}, SQL, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Engineered \textbf{Python}/Airflow \textbf{ETL pipelines} powering \textbf{ML} workloads across 50M+ daily transactions on petabyte-scale Delta Lake, delivering feature-ready datasets for \textbf{model training} and real-time inference.}
     \resumeItem{Optimized \textbf{Spark} \textbf{algorithms} via Spark-native API migration and AQE/cluster-memory tuning, cutting latency 40\% and compute costs through \textbf{distributed computing} resource profiling.}
     \resumeItem{Hardened batch processing framework with observability, fault tolerance, and automated failover; shipping cost/performance dashboards driving real-time infrastructure decisions across the platform.}
   \resumeItemListEnd
 
-  \resumeSubheading
-  {Software Engineer Intern {\mdseries $|$ \emph{\textbf{Python}, TypeScript/Node.js, AWS, OpenAI}}}{Jan. -- Dec. 2025}
-  {Contello.ai}{Toronto, ON, Canada}
+  \resumeCompanyRoleHeading
+  {Contello.ai}{Software Engineer Intern}{Jan. -- Dec. 2025}
+  {\textbf{Python}, TypeScript/Node.js, AWS, OpenAI}{Toronto, ON, Canada}
   \resumeItemListStart
     \resumeItem{Integrated OpenAI Responses API into production TypeScript/Node.js on AWS; built content-generation API services serving thousands/day with \textbf{model inference} observability via CloudWatch.}
     \resumeItem{Enabled \textbf{ML}-assisted content creation by ingesting brand docs via an \textbf{NLP} pipeline, caching \textbf{embeddings}, and auto-injecting context while enforcing responsible AI guardrails.}
@@ -127,9 +143,9 @@
 \section{Research Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Software Developer \& Team Lead {\mdseries $|$ \emph{Unreal Engine, \textbf{C++}, \textbf{Python}}}}{Sept. -- Dec. 2024}
-      {UBC Emerging Media Lab}{Vancouver, BC, Canada}
+    \resumeCompanyRoleHeading
+  {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
+  {Unreal Engine, \textbf{C++}, \textbf{Python}}{Vancouver, BC, Canada}
       \resumeItemListStart
         \resumeItem{Led a \textbf{human-AI collaboration research} project: built an AI-driven VR simulation in Unreal (\textbf{C++}) pairing nurse practitioners with AI patients for clinical training.}
         \resumeItem{Designed a multithreaded supervisory architecture (\textbf{C++}/\textbf{Python}) enabling real-time \textbf{ML model} monitoring and protocol enforcement across autonomous patient actors.}
