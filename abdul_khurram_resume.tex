@@ -60,9 +60,25 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeCompanyHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small#2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeCompanyRoleHeading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} {\mdseries $|$ \emph{#4}} & \small#3 \\
+      \textit{\small#2} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -102,18 +118,18 @@
 \section{Work Experience}
   \resumeSubHeadingListStart
 
-  \resumeSubheading
-  {Software Developer Co-op {\mdseries $|$ \emph{\textbf{Apache Spark}, \textbf{Scala}, \textbf{Airflow}, Kafka, Linux}}}{Jan. 2026 -- Present}
-  {RBC Royal Bank}{Vancouver, BC, Canada}
+  \resumeCompanyRoleHeading
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {\textbf{Apache Spark}, \textbf{Scala}, \textbf{Airflow}, Kafka, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Engineered secure \textbf{Scala} pipelines orchestrated by \textbf{Airflow DAGs} to process \textbf{50M+ daily transactions} from \textbf{Delta Lake}, enforcing strict \textbf{RBAC/encryption} controls on \textbf{petabyte-scale sensitive} financial data.}
     \resumeItem{Optimized \textbf{Spark} jobs by refactoring \textbf{SQL} queries and tuning \textbf{AQE/cluster memory}, solving resource bottlenecks and reducing \textbf{latency} by \textbf{40\%}.}
     \resumeItem{Developing \textbf{multi-region} data pipelines with built-in \textbf{fault tolerance}, \textbf{idempotent} re-runs, and automated \textbf{failover} for critical banking workloads.}
   \resumeItemListEnd
 
-\resumeSubheading
-  {Software Engineer Intern {\mdseries $|$ \emph{\textbf{React/Next.js}, \textbf{JavaScript}, \textbf{Tailwind CSS}, TypeScript}}}{Jan. -- Dec. 2025}
-  {Contello.ai}{Toronto, ON, Canada}
+\resumeCompanyRoleHeading
+  {Contello.ai}{Software Engineer Intern}{Jan. -- Dec. 2025}
+  {\textbf{React/Next.js}, \textbf{JavaScript}, \textbf{Tailwind CSS}, TypeScript}{Toronto, ON, Canada}
   \resumeItemListStart
     \resumeItem{Led a major \textbf{UI redesign} using \textbf{React/Next.js} and \textbf{Tailwind CSS}, building a \textbf{reusable component library} that improved workflows, visual consistency, and frontend velocity.}
     \resumeItem{Built \textbf{responsive dashboards} with \textbf{JavaScript} and modern \textbf{CSS} to visualize real-time queue health, campaign analytics, and multi-brand scheduling across thousands of posts/day.}
@@ -126,9 +142,9 @@
 \section{Research Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Software Developer \& Team Lead {\mdseries $|$ \emph{Unreal Engine, C++, Python}}}{Sept. -- Dec. 2024}
-      {UBC Emerging Media Lab}{Vancouver, BC, Canada}
+    \resumeCompanyRoleHeading
+  {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
+  {Unreal Engine, C++, Python}{Vancouver, BC, Canada}
       \resumeItemListStart
         \resumeItem{Led development of an \textbf{AI-driven} VR clinical simulation in \textbf{Unreal (C++)}, collaborating with UBC's School of Nursing to train nurse practitioners.}
         \resumeItem{Designed interactive \textbf{UI} state machines mirroring clinician decision trees, with a novel \textbf{multithreaded supervisory architecture} enforcing clinical protocol adherence.}
