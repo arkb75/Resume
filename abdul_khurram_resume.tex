@@ -60,9 +60,25 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeCompanyHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small#2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeCompanyRoleHeading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} {\mdseries $|$ \emph{#4}} & \small#3 \\
+      \textit{\small#2} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \small#1 & \small#2 \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -103,17 +119,17 @@
 \section{Work Experience}
   \resumeSubHeadingListStart
 
-  \resumeSubheading
-  {Software Developer Co-op {\mdseries $|$ \emph{\textbf{Python}, \textbf{Java}/Scala, \textbf{Airflow}, \textbf{Docker}, Linux}}}{Jan. 2026 -- Present}
-  {RBC Royal Bank}{Vancouver, BC, Canada}
+  \resumeCompanyRoleHeading
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {\textbf{Python}, \textbf{Java}/Scala, \textbf{Airflow}, \textbf{Docker}, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Developed cloud-hosted \textbf{Python}/\textbf{Java} services processing \textbf{50M+ daily transactions}, collaborating in \textbf{Agile sprints} with code reviews and \textbf{CI-gated} releases on enterprise-scale systems.}
     \resumeItem{Optimized backend performance by migrating to \textbf{Spark-native APIs} and tuning resource allocation, reducing \textbf{latency by 40\%}; shipping \textbf{multi-region services} with \textbf{fault tolerance} and automated \textbf{failover}.}
   \resumeItemListEnd
 
-\resumeSubheading
-  {Software Engineer Intern {\mdseries $|$ \emph{\textbf{React}, TypeScript/\textbf{Node.js}, \textbf{Python}/Flask, \textbf{AWS}}}}{Jan. -- Dec. 2025}
-  {Contello.ai}{Toronto, ON, Canada}
+\resumeCompanyRoleHeading
+  {Contello.ai}{Software Engineer Intern}{Jan. -- Dec. 2025}
+  {\textbf{React}, TypeScript/\textbf{Node.js}, \textbf{Python}/Flask, \textbf{AWS}}{Toronto, ON, Canada}
   \resumeItemListStart
     \resumeItem{Led \textbf{end-to-end feature delivery}: scoped, built, tested, and shipped scheduling UX, multi-brand management, and media publishing with \textbf{React} frontends, \textbf{Python/Flask} and \textbf{Node.js} backends, and \textbf{REST APIs} on \textbf{AWS}.}
     \resumeItem{Designed and built \textbf{API services} processing \textbf{thousands of requests/day}, integrating \textbf{OpenAI} for content generation with \textbf{NLP} context injection and \textbf{API guardrails}.}
@@ -126,9 +142,9 @@
 \section{Research Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Software Developer \& Team Lead {\mdseries $|$ \emph{Unreal Engine, C++, \textbf{Python}}}}{Sept. -- Dec. 2024}
-      {UBC Emerging Media Lab}{Vancouver, BC, Canada}
+    \resumeCompanyRoleHeading
+  {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
+  {Unreal Engine, C++, \textbf{Python}}{Vancouver, BC, Canada}
       \resumeItemListStart
         \resumeItem{\textbf{Led development} of an AI-driven VR clinical simulation in Unreal (C++), collaborating with UBC's School of Nursing to train nurse practitioners.}
         \resumeItem{Designed a novel \textbf{multithreaded} supervisory architecture (C++/\textbf{Python}) that monitors \textbf{AI} patient behavior and enforces clinical protocol adherence.}
