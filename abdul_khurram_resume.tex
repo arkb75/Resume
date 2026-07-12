@@ -22,6 +22,7 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4.1pt}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
@@ -60,6 +61,15 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeEducationSubheading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \multicolumn{2}{l}{\textit{\small Relevant Coursework: #5}} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeCompanyHeading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -71,7 +81,7 @@
 \newcommand{\resumeCompanyRoleHeading}[5]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \small\textbf{#1} {\mdseries $|$ \emph{#4}} & \small#3 \\
+      \small\textbf{#1}\hspace{0.4em}{\mdseries $|$ \emph{#4}} & \small#3 \\
       \textit{\small#2} & \textit{\small #5} \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -97,7 +107,7 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape \href{https://www.abdulkhurram.com}{Abdul Khurram}} \\ \vspace{1pt}
+    \textbf{\Huge \href{https://www.abdulkhurram.com}{Abdul Khurram}} \\ \vspace{1pt}
     \small +1 (236) 865-4820 $|$ \href{mailto:arkb25@student.ubc.ca}{\underline{arkb25@student.ubc.ca}} $|$ 
     \href{https://linkedin.com/in/abdulkhurram}{\underline{linkedin.com/in/abdulkhurram}} $|$
     \href{https://github.com/arkb75}{\underline{github.com/arkb75}}
@@ -107,9 +117,10 @@
 %-----------EDUCATION AND AWARDS-----------
 \section{Education \& Awards}
   \resumeSubHeadingListStart
-    \resumeSubheading
+    \resumeEducationSubheading
       {University of British Columbia}{Vancouver, BC, Canada}
       {Bachelor of Science in Computer Science (\textbf{Expected Graduation: May 2027})}{}
+      {\textbf{Data Structures \& Algorithms}; Algorithm Design \& Analysis}
       \resumeSubheading
       {Euclid Mathematics Contest, University of Waterloo}{2021}
       {Top 5\% Internationally, Certificate of Distinction}{}
@@ -125,21 +136,21 @@
   \vspace{2pt}
 
   \resumeCompanyRoleHeading
-  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
-  {\textbf{Python}, \textbf{Apache Spark}, \textbf{Airflow}, SQL, Linux}{Vancouver, BC, Canada}
+  {RBC\hspace{0.4em}Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {Python, Apache Spark, Airflow, SQL, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
-    \resumeItem{Engineered \textbf{Python}/Airflow \textbf{ETL pipelines} powering \textbf{ML} workloads across 50M+ daily transactions on petabyte-scale Delta Lake, delivering feature-ready datasets for \textbf{model training} and real-time inference.}
-    \resumeItem{Optimized \textbf{Spark} \textbf{algorithms} via Spark-native API migration and AQE/cluster-memory tuning, cutting latency 40\% and compute costs through \textbf{distributed computing} resource profiling.}
-    \resumeItem{Hardened batch processing framework with observability, fault tolerance, and automated failover; shipping cost/performance dashboards driving real-time infrastructure decisions across the platform.}
+    \resumeItem{Built Python/Airflow pipelines processing \textbf{50M+ daily transactions} from petabyte-scale Delta Lake, delivering analysis-ready data for downstream ML and analytics workloads.}
+    \resumeItem{Resolved Spark resource bottlenecks through Spark-native API migration and AQE/cluster-memory tuning, cutting \textbf{latency 40\%}; built cost/performance dashboards.}
+    \resumeItem{Developing \textbf{multi-region pipelines} with observability, fault tolerance, idempotent re-runs, and automated failover for critical banking workloads.}
   \resumeItemListEnd
 
   \resumeCompanyRoleHeading
-  {Contello.ai}{Software Engineer Intern}{Jan. -- Dec. 2025}
-  {\textbf{Python}, TypeScript/Node.js, AWS, OpenAI}{Toronto, ON, Canada}
+  {Contello.ai}{AI Systems \& Full-Stack Engineering Intern}{Jan. -- Dec. 2025}
+  {TypeScript/Node.js, AWS, OpenAI, Playwright}{Toronto, ON, Canada}
   \resumeItemListStart
-    \resumeItem{Integrated OpenAI Responses API into production TypeScript/Node.js on AWS; built content-generation API services serving thousands/day with \textbf{model inference} observability via CloudWatch.}
-    \resumeItem{Enabled \textbf{ML}-assisted content creation by ingesting brand docs via an \textbf{NLP} pipeline, caching \textbf{embeddings}, and auto-injecting context while enforcing responsible AI guardrails.}
-    \resumeItem{Raised service reliability to 99.9\% via \textbf{model} API migration, cost/latency tracking, retry/backoff, and automated tests in CI/CD; deployed via Docker containers on AWS.}
+    \resumeItem{Built TypeScript/Node.js services and async AWS pipelines (SQS, S3) processing \textbf{thousands of content jobs/day}, owning features from API design through production monitoring.}
+    \resumeItem{Integrated the \textbf{OpenAI Responses API} and an NLP/embedding context pipeline for brand-aware generation, with validation, responsible-AI guardrails, and cost/latency tracking.}
+    \resumeItem{Raised scheduled-post reliability to \textbf{99.9\%} through retry/backoff, CloudWatch alerting, Playwright E2E/integration tests, and CI/CD release gates.}
   \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -149,12 +160,12 @@
   \resumeSubHeadingListStart
 
     \resumeCompanyRoleHeading
-  {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
-  {Unreal Engine, \textbf{C++}, \textbf{Python}}{Vancouver, BC, Canada}
+  {UBC\hspace{0.4em}Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
+  {Unreal Engine, C++, Python}{Vancouver, BC, Canada}
       \resumeItemListStart
-        \resumeItem{Led a \textbf{human-AI collaboration research} project: built an AI-driven VR simulation in Unreal (\textbf{C++}) pairing nurse practitioners with AI patients for clinical training.}
-        \resumeItem{Designed a multithreaded supervisory architecture (\textbf{C++}/\textbf{Python}) enabling real-time \textbf{ML model} monitoring and protocol enforcement across autonomous patient actors.}
-        \resumeItem{\textbf{Optimized} inference pipeline, achieving 40\% latency reduction and 90\% cost savings through profiling and \textbf{algorithm} tuning; documented design decisions and system capabilities.}
+        \resumeItem{Led an interdisciplinary CS $\times$ Nursing team building an \textbf{AI-driven VR clinical simulation} in Unreal/C++, owning requirements, system design, and delivery.}
+        \resumeItem{Designed a \textbf{multithreaded C++/Python supervisor} coordinating concurrent AI actors with shared state and real-time protocol enforcement.}
+        \resumeItem{Profiled the inference pipeline and restructured its call graph, reducing \textbf{latency 40\% and inference costs 90\%}.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -164,19 +175,19 @@
 \resumeSubHeadingListStart
 
   \resumeProjectHeading
-    {\textbf{CircleFund} $|$ \emph{\textbf{Python}, \textbf{PyTorch}, TypeScript/Next.js, Prisma/PostgreSQL}}
-    {\textbf{Personal Project}}
+    {\textbf{Backer} $|$ \emph{TypeScript, Python, AWS DynamoDB, XGBoost}}
+    {\textbf{Hack The Coast 2026}}
   \resumeItemListStart
-       \resumeItem{Building a full-stack lending platform (Next.js, Prisma/PostgreSQL) with account onboarding, invite-code circle management, and contribution dashboards for community-group financial workflows.}
-        \resumeItem{Designing \textbf{PyTorch}-based borrower risk scoring and contribution reliability \textbf{models} with planned liquidity stress forecasting, integrating \textbf{ML} predictions into the platform's decision layer.}
+      \resumeItem{Architected a DynamoDB data layer (\textbf{10+ tables}) with typed repositories, batch operations, and transactional writes for high-throughput feed and messaging workflows.}
+      \resumeItem{Engineered six behavioral and similarity features and trained an \textbf{XGBoost ranker} to personalize startup discovery from interaction signals.}
   \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{Backer} $|$ \emph{TypeScript/Next.js, AWS DynamoDB, NextAuth}}
-    {\textbf{Hack The Coast 2026}}
+    {\textbf{Workbase} $|$ \emph{Next.js/TypeScript, PostgreSQL, AWS Bedrock}}
+    {\textbf{Personal Project}}
   \resumeItemListStart
-      \resumeItem{Architected a startup discovery platform (TypeScript/Next.js, DynamoDB) serving personalized investor feeds at scale via API services.}
-      \resumeItem{Built \textbf{ML} training pipeline: supervised \textbf{model} with sequence and clustering features, ingesting signals from DynamoDB event streams to train and deploy an \textbf{XGBoost} ranker to production.}
+      \resumeItem{\textbf{Solo-built} a full-stack platform that ingests GitHub repositories via OAuth, clusters evidence into work themes, and generates artifacts exclusively from \textbf{human-approved claims}.}
+      \resumeItem{Engineered a \textbf{resource-bounded AWS Bedrock agent} capped at 8 iterations, 16 tool calls, and 120K tokens/run, with automated \textbf{credential redaction} before model calls.}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -185,8 +196,9 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: \textbf{Python}, Java, \textbf{SQL}, TypeScript/JavaScript, \textbf{C/C++}, Bash, HTML/CSS} \\
-     \textbf{ML \& Platforms}{: \textbf{PyTorch}, \textbf{Scikit-learn}, OpenAI API, LangChain, \textbf{NLP}/embeddings; React/Next.js, \textbf{Airflow}, \textbf{Hadoop}/\textbf{Spark}; AWS (Lambda, \textbf{DynamoDB}, S3, SQS, CloudWatch); \textbf{PostgreSQL}, Docker, Git, CI/CD}
+     \textbf{Languages}{: \textbf{Python}, \textbf{C/C++}, Java, TypeScript/JavaScript, SQL, Bash} \\
+     \textbf{AI/ML}{: \textbf{XGBoost}, OpenAI API, AWS Bedrock, NLP/embeddings, model evaluation} \\
+     \textbf{Infrastructure \& Data}{: \textbf{Apache Spark}, Airflow, Delta Lake; AWS (DynamoDB, S3, SQS, CloudWatch); PostgreSQL, Docker, Git, Linux, CI/CD}
     }}
  \end{itemize}
 
