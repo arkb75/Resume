@@ -20,6 +20,7 @@
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
+\setlength{\footskip}{4.1pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -97,7 +98,7 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape \href{https://www.abdulkhurram.com}{Abdul Khurram}} \\ \vspace{1pt}
+    \textbf{\Huge \href{https://www.abdulkhurram.com}{Abdul Khurram}} \\ \vspace{1pt}
     \small +1 (236) 865-4820 $|$ \href{mailto:arkb25@student.ubc.ca}{\underline{arkb25@student.ubc.ca}} $|$ 
     \href{https://linkedin.com/in/abdulkhurram}{\underline{linkedin.com/in/abdulkhurram}} $|$
     \href{https://github.com/arkb75}{\underline{github.com/arkb75}}
@@ -110,22 +111,30 @@
     \resumeSubheading
       {University of British Columbia}{Vancouver, BC, Canada}
       {Bachelor of Science in Computer Science (\textbf{Expected Graduation: May 2027})}{}
-      \resumeSubheading
-      {Euclid Mathematics Contest, University of Waterloo}{2021}
-      {Top 5\% Internationally, Certificate of Distinction}{}
+      \resumeProjectHeading
+      {\textbf{Euclid Mathematics Contest, University of Waterloo}, Top 5\% Internationally}{2021}
   \resumeSubHeadingListEnd
 
 %-----------WORK EXPERIENCE-----------
 \section{Work Experience}
   \resumeSubHeadingListStart
 
+  \resumeCompanyHeading
+  {Shopify}{Sept. 2026 -- Present}
+  {Software Engineer Intern}{Toronto, ON, Canada}
+  \resumeItemListStart
+    \resumeItem{Fixed a \textbf{merchant trust-eligibility bug} in WhatsApp recommendations; added regression tests and merged a targeted fix without broadening shared eligibility logic.}
+    \resumeItem{Built a \textbf{Codex integration used across several teams}, handling isolated plugin caches and shared-worktree rules files with symlink checks, shell linting, and tests.}
+  \resumeItemListEnd
+
+
   \resumeCompanyRoleHeading
-  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. -- Aug. 2026}
   {\textbf{Python}, \textbf{Scala}, \textbf{Kafka}, \textbf{Airflow}, \textbf{Docker}, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Engineered Python/Scala \textbf{data pipelines} ingesting \textbf{50M+ daily events} via Kafka streams and Airflow DAGs, enforcing RBAC/encryption on \textbf{petabyte-scale Delta Lake}.}
-    \resumeItem{Optimized \textbf{Apache Spark} batch jobs via Spark-native API migration and AQE tuning, cutting latency by \textbf{40\%}; built dashboards tracking pipeline health and cost.}
-    \resumeItem{Shipping multi-region services on \textbf{Kubernetes}-orchestrated, Docker-containerized clusters with fault tolerance, idempotent re-runs, and \textbf{Terraform}-provisioned failover for high-reliability workloads.}
+    \resumeItem{Optimized \textbf{Spark} jobs to cut \textbf{test runtime 40\%}; rolled back the change after production instability.}
+    \resumeItem{Worked on multi-region services on \textbf{Kubernetes}-orchestrated, Docker-containerized clusters with fault tolerance, idempotent re-runs, and \textbf{Terraform}-provisioned failover for high-reliability workloads.}
   \resumeItemListEnd
 
 \resumeCompanyRoleHeading
@@ -147,9 +156,8 @@
   {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
   {\textbf{C++}, \textbf{Python}, Unreal Engine}{Vancouver, BC, Canada}
       \resumeItemListStart
-        \resumeItem{Led development of a real-time VR simulation in \textbf{C++}, designing an \textbf{edge-to-cloud data collection} pipeline streaming sensor events to AI decision-making.}
-        \resumeItem{Built a multithreaded supervisory system (C++/Python) coordinating concurrent actors with shared state, lock-free message passing, and real-time monitoring.}
-        \resumeItem{Profiled the processing pipeline, identified memory and I/O hotspots, and restructured the call graph — achieving \textbf{40\%} latency reduction and \textbf{90\%} cost savings.}
+        \resumeItem{Led a C++ VR simulation project with an \textbf{edge-to-cloud pipeline} streaming sensor events for AI decision-making.}
+        \resumeItem{Built \textbf{C++/Python supervision} with shared state, lock-free messaging, and real-time monitoring; profiled memory/I/O hotspots to cut \textbf{latency 40\%} and \textbf{costs 90\%}.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -172,7 +180,7 @@
     {\textbf{Personal Project}}
   \resumeItemListStart
        \resumeItem{Built a career content platform that ingests GitHub repositories via OAuth, normalizes commit and PR data into \textbf{PostgreSQL}, and generates verified resume highlights with evidence attribution.}
-       \resumeItem{Designed a multi-step \textbf{data pipeline} — LLM generation, schema validation, structured output repair, and audit logging — with deterministic retry and automated test suites covering pipeline correctness.}
+       \resumeItem{Designed a multi-step \textbf{data pipeline} with LLM generation, schema validation, output repair, and audit logging, plus deterministic retry and automated correctness tests.}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
