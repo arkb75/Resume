@@ -20,6 +20,7 @@
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
+\setlength{\footskip}{4.1pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -97,11 +98,12 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape \href{https://www.abdulkhurram.com}{Abdul Khurram}} \\ \vspace{1pt}
+    \textbf{\Huge \href{https://www.abdulkhurram.com}{Abdul Khurram}} \\ \vspace{1pt}
     \small +1 (236) 865-4820 $|$ \href{mailto:arkb25@student.ubc.ca}{\underline{arkb25@student.ubc.ca}} $|$ 
     \href{https://linkedin.com/in/abdulkhurram}{\underline{linkedin.com/in/abdulkhurram}} $|$
     \href{https://github.com/arkb75}{\underline{github.com/arkb75}}
 \end{center}
+\vspace{-12pt}
 
 %-----------EDUCATION AND AWARDS-----------
 \section{Education \& Awards}
@@ -109,22 +111,31 @@
     \resumeSubheading
       {The University of British Columbia}{Vancouver, BC, Canada}
       {Bachelor of Science in Computer Science (\textbf{Expected Graduation: May 2027})}{}
-      \resumeSubheading
-      {Euclid Mathematics Contest, University of Waterloo}{2021}
-      {Top 5\% Internationally, Certificate of Distinction}{}
+      \resumeProjectHeading
+      {\textbf{Euclid Mathematics Contest, University of Waterloo}, Top 5\% Internationally}{2021}
   \resumeSubHeadingListEnd
 
 %-----------WORK EXPERIENCE-----------
 \section{Work Experience}
   \resumeSubHeadingListStart
 
+  \resumeCompanyHeading
+  {Shopify}{Sept. 2026 -- Present}
+  {Software Engineer Intern}{Toronto, ON, Canada}
+  \resumeItemListStart
+    \resumeItem{Traced a broken WhatsApp onboarding flow to an incorrect recommendation; merged a \textbf{merchant eligibility fix} with regression tests.}
+    \resumeItem{Implemented a \textbf{Polaris pricing banner} matching existing admin UI patterns behind a default-off feature flag; awaiting human review.}
+    \resumeItem{Prepared an approved \textbf{UI cleanup across 373 files}, removing legacy layouts, components, hooks, and translations while preserving save behavior; merge pending.}
+  \resumeItemListEnd
+
+
   \resumeCompanyRoleHeading
-  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. -- Aug. 2026}
   {\textbf{Apache Spark}, \textbf{Scala}, \textbf{Airflow}, Kafka, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Engineered secure \textbf{Scala} pipelines orchestrated by \textbf{Airflow DAGs} to process \textbf{50M+ daily transactions} from \textbf{Delta Lake}, enforcing strict \textbf{RBAC/encryption} controls on \textbf{petabyte-scale sensitive} financial data.}
-    \resumeItem{Optimized \textbf{Spark} jobs by refactoring \textbf{SQL} queries and tuning \textbf{AQE/cluster memory}, solving resource bottlenecks and reducing \textbf{latency} by \textbf{40\%}.}
-    \resumeItem{Developing \textbf{multi-region} data pipelines with built-in \textbf{fault tolerance}, \textbf{idempotent} re-runs, and automated \textbf{failover} for critical banking workloads.}
+    \resumeItem{Optimized \textbf{Spark} jobs to cut \textbf{test runtime 40\%}; rolled back the change after production instability.}
+    \resumeItem{Worked on \textbf{multi-region} data pipelines with built-in \textbf{fault tolerance}, \textbf{idempotent} re-runs, and automated \textbf{failover} for critical banking workloads.}
   \resumeItemListEnd
 
 \resumeCompanyRoleHeading
@@ -146,9 +157,8 @@
   {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
   {Unreal Engine, C++, Python}{Vancouver, BC, Canada}
       \resumeItemListStart
-        \resumeItem{Led development of an \textbf{AI-driven} VR clinical simulation in \textbf{Unreal (C++)}, collaborating with UBC's School of Nursing to train nurse practitioners.}
-        \resumeItem{Designed interactive \textbf{UI} state machines mirroring clinician decision trees, with a novel \textbf{multithreaded supervisory architecture} enforcing clinical protocol adherence.}
-        \resumeItem{Evaluated system performance, achieving \textbf{40\%} latency reduction and \textbf{90\%} inference cost savings through pipeline optimizations.}
+        \resumeItem{Led an \textbf{AI-driven VR clinical simulation} in Unreal/C++ with UBC Nursing to train nurse practitioners.}
+        \resumeItem{Designed \textbf{interactive UI state machines} for clinical decisions and multithreaded protocol enforcement; optimized inference to cut \textbf{latency 40\%} and \textbf{costs 90\%}.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -161,17 +171,16 @@
     {\textbf{Backer} $|$ \emph{\textbf{React 18}, \textbf{Next.js 14}, TypeScript, \textbf{CSS}}}
     {\textbf{Hack The Coast 2026}}
   \resumeItemListStart
-    \resumeItem{Built a \textbf{TikTok-style startup feed} with swipe interactions, watch-milestone tracking, and animated like/commit actions in \textbf{React}.}
+    \resumeItem{Built a \textbf{React startup feed} with swipe gestures, watch-milestone tracking, and animated like/commit actions.}
     \resumeItem{Designed \textbf{11 component domains} with a shared \textbf{UI library} of reusable cards, modals, and form controls.}
-    \resumeItem{Implemented multi-step founder/investor \textbf{onboarding flows} with media uploads, live validation, and \textbf{responsive layouts} across breakpoints.}
+    \resumeItem{Built founder/investor \textbf{onboarding flows} with uploads, live validation, and \textbf{responsive layouts}.}
   \resumeItemListEnd
-  \vspace{-8pt}
   \resumeProjectHeading
-    {\textbf{SoloPilot — Client Ops Studio} $|$ \emph{\textbf{Next.js}, \textbf{React}, TypeScript, \textbf{Tailwind CSS}}}
+    {\textbf{SoloPilot: Client Ops Studio} $|$ \emph{\textbf{Next.js}, \textbf{React}, TypeScript, \textbf{Tailwind CSS}}}
     {\textbf{Personal Project}}
   \resumeItemListStart
-    \resumeItem{Building a \textbf{Next.js/React} web app with \textbf{Tailwind CSS} that unifies client intake, planning, proposals, and delivery in one polished workspace.}
-    \resumeItem{Shipped an email intake console with real-time thread management, inline annotations, and versioned PDF previews—all rendered client-side with \textbf{JavaScript}.}
+    \resumeItem{Building a \textbf{Next.js/React} workspace for client intake, planning, proposals, and delivery with \textbf{Tailwind CSS}.}
+    \resumeItem{Shipped a \textbf{JavaScript} intake console with email threads, inline annotations, and versioned PDF previews.}
     \resumeItem{Implemented responsive layouts and \textbf{component-driven architecture} for consistent styling and fast iteration.}
   \resumeItemListEnd
 
