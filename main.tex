@@ -20,6 +20,7 @@
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
+\setlength{\footskip}{4.1pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -97,7 +98,7 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape \href{https://www.abdulkhurram.com}{Abdul Khurram}} \\ \vspace{1pt}
+    \textbf{\Huge \href{https://www.abdulkhurram.com}{Abdul Khurram}} \\ \vspace{1pt}
     \small +1 (236) 865-4820 $|$ \href{mailto:rafay@abdulkhurram.com}{\underline{rafay@abdulkhurram.com}} $|$ 
     \href{https://linkedin.com/in/abdulkhurram}{\underline{linkedin.com/in/abdulkhurram}} $|$
     \href{https://github.com/arkb75}{\underline{github.com/arkb75}}
@@ -110,14 +111,22 @@
     \resumeSubheading
       {University of British Columbia}{Vancouver, BC, Canada}
       {Bachelor of Science in Computer Science (\textbf{Expected Graduation: May 2027})}{}
-      \resumeSubheading
-      {Euclid Mathematics Contest, University of Waterloo}{2021}
-      {Top 5\% Internationally, Certificate of Distinction}{}
+      \resumeProjectHeading
+      {\textbf{Euclid Mathematics Contest, University of Waterloo}, Top 5\% Internationally}{2021}
   \resumeSubHeadingListEnd
 
 %-----------WORK EXPERIENCE-----------
 \section{Work Experience}
   \resumeSubHeadingListStart
+
+  \resumeCompanyHeading
+  {Shopify}{Sept. 2026 -- Present}
+  {Software Engineer Intern}{Toronto, ON, Canada}
+  \resumeItemListStart
+    \resumeItem{Built a \textbf{Codex integration} for internal AI tooling, now used across \textbf{several teams}, with 9 reusable skills and session hooks.}
+    \resumeItem{Designed an \textbf{MCP bridge} to an internal coding agent; tested session discovery and revised the design after an API experiment ruled out full-session scans.}
+  \resumeItemListEnd
+
 
   \resumeCompanyRoleHeading
   {Contello.ai}{Software Engineer Intern}{Jan. -- Dec. 2025}
@@ -129,12 +138,12 @@
   \resumeItemListEnd
 
   \resumeCompanyRoleHeading
-  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. -- Aug. 2026}
   {\textbf{Apache Spark}, Python, \textbf{Airflow}, SQL, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Engineered \textbf{Python/Airflow} pipelines processing \textbf{50M+ daily transactions} from \textbf{Delta Lake}, enabling downstream \textbf{ML/AI teams} with analysis-ready data on \textbf{petabyte-scale} financial systems.}
-    \resumeItem{Optimized \textbf{Spark} jobs by migrating to \textbf{Spark-native} APIs and tuning \textbf{AQE/cluster memory}, cutting \textbf{latency 40\%} and \textbf{compute costs} via \textbf{resource profiling}.}
-    \resumeItem{Developing \textbf{multi-region} pipelines with \textbf{observability}, \textbf{fault tolerance}, and automated \textbf{failover}; instrumenting \textbf{cost/performance metrics} to inform infra decisions.}
+    \resumeItem{Optimized \textbf{Spark} jobs to cut \textbf{test runtime 40\%}; rolled back the change after production instability.}
+    \resumeItem{Worked on \textbf{multi-region} pipelines with \textbf{observability}, \textbf{fault tolerance}, and automated \textbf{failover}; instrumenting \textbf{cost/performance metrics} to inform infra decisions.}
   \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -147,9 +156,8 @@
   {UBC Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
   {Unreal Engine, \textbf{C++}, Python}{Vancouver, BC, Canada}
       \resumeItemListStart
-        \resumeItem{Led a \textbf{human-AI collaboration} research project: built an \textbf{AI-driven} VR simulation in \textbf{Unreal (C++)} pairing nurse practitioners with AI patients for clinical training.}
-        \resumeItem{Designed a \textbf{multithreaded supervisory architecture} (\textbf{C++}/\textbf{Python}) enabling \textbf{real-time AI monitoring} and protocol enforcement across \textbf{agentic} patient actors.}
-        \resumeItem{Analyzed \textbf{AI system performance}, achieving \textbf{40\%} latency reduction and \textbf{90\%} inference cost savings through \textbf{pipeline profiling} and optimization.}
+        \resumeItem{Led a \textbf{human-AI collaboration} project building a VR clinical simulator for nurse practitioners in Unreal/C++.}
+        \resumeItem{Built \textbf{multithreaded C++/Python supervision} for AI patient monitoring and protocol enforcement; optimized inference to cut \textbf{latency 40\%} and \textbf{costs 90\%}.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
