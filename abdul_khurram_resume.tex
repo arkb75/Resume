@@ -112,7 +112,7 @@
       {University of British Columbia}{Vancouver, BC, Canada}
       {Bachelor of Science in Computer Science (\textbf{Expected Graduation: May 2027})}{}
     \resumeProjectHeading
-      {\textbf{Euclid Mathematics Contest, University of Waterloo} --- Top 5\% Internationally}{2021}
+      {\textbf{Euclid Mathematics Contest, University of Waterloo}, Top 5\% Internationally}{2021}
   \resumeSubHeadingListEnd
 
 %-----------WORK EXPERIENCE-----------
@@ -120,27 +120,28 @@
   \resumeSubHeadingListStart
 
   \resumeCompanyHeading
-  {Shopify}{Sept. -- Dec. 2026}
+  {Shopify}{Sept. 2026 -- Present}
   {Software Engineer Intern}{Toronto, ON, Canada}
   \resumeItemListStart
-    \resumeItem{Building and shipping \textbf{backend services} and merchant-facing workflows for Shopify's messaging products.}
+    \resumeItem{Diagnosed and fixed a \textbf{WhatsApp onboarding eligibility bug}, tracing a broken merchant journey to an incorrect recommendation; added regression tests and merged a targeted fix.}
+    \resumeItem{Built a \textbf{Codex integration now used across several teams}, adding \textbf{9 reusable skills} and session hooks; validated installation and upgrade flows in a sandbox.}
+    \resumeItem{Implemented a \textbf{reviewer-approved settings cleanup} removing \textbf{6,941 lines across 373 files}, preserving independent feature gates and save behavior; merge pending.}
   \resumeItemListEnd
 
   \resumeCompanyRoleHeading
   {RBC\hspace{0.4em}Royal Bank}{Software Developer Co-op}{Jan. -- Aug. 2026}
   {Python, Trino, Apache Spark, SQL, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
-    \resumeItem{Re-architected a derivatives-to-ledger pipeline from Spark/YARN and Hive ODBC to \textbf{direct Trino SQL} after rolling back a Spark optimization that cut test runtime about 40\% but proved unstable in production.}
-    \resumeItem{Built a Trino connector, shared query executor, and schema-aware adapter for \textbf{10 Hive-to-Trino SQL differences}; preserved pandas/CSV contracts with a feature flag and legacy fallback.}
-    \resumeItem{Cut aggregate Dev/QA runtime \textbf{86\%} (261 to 36 minutes; 7.3$\times$ across five workloads), validated business-row parity, and shipped the integration to production with the team.}
+    \resumeItem{Rebuilt a \textbf{Python/Trino} ledger pipeline after a Spark optimization proved unstable; handled \textbf{10 SQL compatibility differences} while preserving data contracts and a rollback path.}
+    \resumeItem{Cut aggregate \textbf{Dev/QA runtime 86\%} (261 to 36 minutes across five workloads), verified matching business data, and shipped the integration to production with the team.}
   \resumeItemListEnd
 
   \resumeCompanyRoleHeading
   {Contello.ai}{AI Systems \& Full-Stack Engineering Intern}{Jan. -- Dec. 2025}
-  {TypeScript/Node.js, AWS, OpenAI, Playwright}{Toronto, ON, Canada}
+  {React, TypeScript/Node.js, AWS, OpenAI}{Toronto, ON, Canada}
   \resumeItemListStart
-    \resumeItem{Built TypeScript/Node.js services and React workflows on event-driven AWS pipelines (SQS, S3), processing \textbf{thousands of jobs/day} with ownership from API design through production monitoring.}
-    \resumeItem{Integrated the \textbf{OpenAI Responses API} and embeddings into brand-aware workflows with human review, output validation, and cost/latency tracking.}
+    \resumeItem{Owned \textbf{end-to-end delivery} of React/Node.js scheduling, multi-brand management, and media publishing; operated AWS pipelines handling \textbf{thousands of jobs/day}.}
+    \resumeItem{Integrated the \textbf{OpenAI Responses API} and brand-document embeddings for content generation with human review, output validation, and cost/latency tracking.}
     \resumeItem{Raised scheduled-post reliability to \textbf{99.9\%} through retry/backoff, CloudWatch alerting, Playwright E2E/integration tests, and CI/CD release gates.}
   \resumeItemListEnd
 
@@ -154,8 +155,8 @@
   {UBC\hspace{0.4em}Emerging Media Lab}{Software Developer \& Team Lead}{Sept. -- Dec. 2024}
   {Unreal Engine, C++, Python}{Vancouver, BC, Canada}
       \resumeItemListStart
-        \resumeItem{Led an interdisciplinary CS $\times$ Nursing team building an AI-driven VR clinical simulation in Unreal/C++, owning requirements, architecture, and delivery.}
-        \resumeItem{Built a multithreaded C++/Python supervisor for concurrent AI actors and restructured its inference pipeline, cutting latency \textbf{40\%} and inference costs \textbf{90\%}.}
+        \resumeItem{Led a \textbf{CS $\times$ Nursing team} from requirements through delivery of an AI-driven VR clinical simulation.}
+        \resumeItem{Built C++/Python supervision for concurrent AI patients and clinical protocol enforcement; optimized inference to cut \textbf{latency 40\%} and \textbf{costs 90\%}.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -165,19 +166,19 @@
 \resumeSubHeadingListStart
 
   \resumeProjectHeading
-    {\textbf{Workbase} $|$ \emph{Next.js/TypeScript, PostgreSQL, AWS Bedrock}}
+    {\textbf{Workbase} $|$ \emph{React/Next.js, TypeScript, PostgreSQL, AWS Bedrock}}
     {\textbf{Personal Project}}
   \resumeItemListStart
-      \resumeItem{Solo-built a \textbf{repository intelligence platform} that ingests GitHub code via OAuth, maintains evidence-backed project knowledge, and generates career artifacts from user-approved claims.}
-      \resumeItem{Generalized the LLM repository-knowledge pipeline across codebases with \textbf{immutable evidence provenance}, sensitive quarantine, bounded structured-output repair, and regression evals to \textbf{fail closed} on weak evidence.}
+      \resumeItem{\textbf{Solo-built} a full-stack platform that turns GitHub repositories into evidence-backed project knowledge and career content, with OAuth ingestion and \textbf{user-approved claims}.}
+      \resumeItem{Built an LLM pipeline that rejects weakly supported claims, with source attribution, credential redaction, bounded output repair, and \textbf{regression evaluations}.}
   \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{Backer} $|$ \emph{TypeScript, Python, AWS DynamoDB, XGBoost}}
+    {\textbf{Backer} $|$ \emph{Next.js/TypeScript, Python, DynamoDB, XGBoost}}
     {\textbf{Hack The Coast 2026}}
   \resumeItemListStart
-      \resumeItem{Modeled \textbf{11 DynamoDB tables} with typed repositories, batched reads, and transactional writes for founder/investor workflows.}
-      \resumeItem{Engineered six behavioral/similarity features and trained an \textbf{XGBoost ranking model} on investor interaction events to personalize startup discovery.}
+      \resumeItem{Built a \textbf{startup discovery feed} with swipe/watch tracking and \textbf{11 DynamoDB tables} for feed and messaging.}
+      \resumeItem{Trained an \textbf{XGBoost ranker} on six behavioral/similarity features to personalize startup discovery.}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -186,9 +187,10 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages:} Python, Java, Scala, TypeScript/JavaScript, C/C++, SQL, Bash \\
-     \textbf{AI/ML:} XGBoost, NLP/embeddings, LLM evaluation; OpenAI API, AWS Bedrock \\
-     \textbf{Platforms:} React/Next.js, Node.js, REST APIs; Trino, Apache Spark, Airflow; AWS (DynamoDB, S3, SQS, CloudWatch); PostgreSQL, Docker, Git, Linux, CI/CD
+     \textbf{Languages:} Python, TypeScript/JavaScript, SQL, C/C++, Java, Scala \\
+     \textbf{Full Stack:} React/Next.js, Node.js, REST APIs, PostgreSQL, DynamoDB \\
+     \textbf{AI/ML:} OpenAI API, AWS Bedrock, embeddings, XGBoost, LLM evaluation \\
+     \textbf{Tools:} AWS, Trino, Apache Spark, Docker, Git, Playwright, Vitest, CI/CD
     }}
  \end{itemize}
 
