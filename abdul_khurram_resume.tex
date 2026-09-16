@@ -111,9 +111,8 @@
     \resumeSubheading
       {University of British Columbia}{Vancouver, BC, Canada}
       {Bachelor of Science in Computer Science (\textbf{Expected Graduation: May 2027})}{}
-      \resumeSubheading
-      {Euclid Mathematics Contest, University of Waterloo}{2021}
-      {Top 5\% Internationally, Certificate of Distinction}{}
+      \resumeProjectHeading
+      {\textbf{Euclid Mathematics Contest, University of Waterloo}, Top 5\% Internationally}{2021}
   \resumeSubHeadingListEnd
 
 %-----------WORK EXPERIENCE-----------
@@ -121,17 +120,20 @@
   \resumeSubHeadingListStart
 
   \resumeCompanyHeading
-  {Shopify}{Sept. -- Dec. 2026}
-  {Incoming Software Engineer Intern}{Toronto, ON, Canada}
-  \vspace{2pt}
+  {Shopify}{Sept. 2026 -- Present}
+  {Software Engineer Intern}{Toronto, ON, Canada}
+  \resumeItemListStart
+    \resumeItem{Traced a broken merchant onboarding journey to incorrect WhatsApp recommendations; merged a \textbf{root-cause eligibility fix} with regression tests.}
+    \resumeItem{Identified a gap in internal developer tooling and built a \textbf{Codex integration now used across several teams}, adding 9 reusable skills and session hooks.}
+  \resumeItemListEnd
 
   \resumeCompanyRoleHeading
-  {RBC Royal Bank}{Software Developer Co-op}{Jan. 2026 -- Present}
+  {RBC Royal Bank}{Software Developer Co-op}{Jan. -- Aug. 2026}
   {Apache Spark, Scala, Airflow, Kafka, Linux}{Vancouver, BC, Canada}
   \resumeItemListStart
     \resumeItem{Built secure Scala/Airflow pipelines processing \textbf{50M+ daily transactions} from Delta Lake, enforcing RBAC/encryption on petabyte-scale financial data.}
-    \resumeItem{Optimized Spark jobs by migrating legacy code to Spark-native APIs and tuning AQE/cluster memory, solving resource bottlenecks and reducing latency by \textbf{40\%}.}
-    \resumeItem{Shipping \textbf{multi-region data products} with fault tolerance, idempotent re-runs, and automated failover for critical banking workloads.}
+    \resumeItem{Optimized \textbf{Spark} jobs to cut \textbf{test runtime 40\%}; rolled back the change after production instability.}
+    \resumeItem{Worked on \textbf{multi-region data products} with fault tolerance, idempotent re-runs, and automated failover for critical banking workloads.}
   \resumeItemListEnd
 
 \resumeCompanyRoleHeading
